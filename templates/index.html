@@ -1,3 +1,45 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Sign Language Detection</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            text-align: center;-->
+<!--        }-->
+<!--        h1 {-->
+<!--            margin-top: 50px;-->
+<!--        }-->
+<!--        img {-->
+<!--            width: 800px;-->
+<!--            height: 400px;-->
+<!--            margin-top: 50px;-->
+<!--        }-->
+<!--        button {-->
+<!--            margin-top: 30px;-->
+<!--            padding: 10px 20px;-->
+<!--            font-size: 18px;-->
+<!--            background-color: #4CAF50;-->
+<!--            color: white;-->
+<!--            border: none;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        button:hover {-->
+<!--            background-color: #45a049;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <h1>Welcome to Sign Language Detection</h1>-->
+<!--    <img src="https://www.pngitem.com/pimgs/m/335-3356503_welcome-in-sign-language-hd-png-download.png" alt="Sign Language Welcome">-->
+<!--    <form action="/detect" method="post">-->
+<!--        <button type="submit">Click for Sign Language</button>-->
+<!--    </form>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +72,32 @@
     </style>
 </head>
 <body>
-    <h1>Welcome to Sign Language Detection</h1>
+    <h1>Welcome to Sign Language Detection</h1>-->
     <img src="https://www.pngitem.com/pimgs/m/335-3356503_welcome-in-sign-language-hd-png-download.png" alt="Sign Language Welcome">
     <form action="/detect" method="post">
         <button type="submit">Click for Sign Language</button>
     </form>
+
+    <script>
+        function controlApp(action) {
+            fetch('/control', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'action=' + action,
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Action performed: ' + action);
+                } else {
+                    console.error('Failed to perform action: ' + action);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
 </body>
 </html>

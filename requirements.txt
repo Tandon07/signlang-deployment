@@ -18,7 +18,6 @@ tqdm>=4.64.0
 
 
 
-
 panda
 # apache-airflow
 # gunicorn== 20.0.4
